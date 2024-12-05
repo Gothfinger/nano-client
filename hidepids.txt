@@ -1,0 +1,13 @@
+Don't worry, there's no need to access that file or anything, just do the following.
+    Start Apex
+    Wait until you're in main menu
+    Open terminal
+    Run this command: sudo sysctl -w kernel.yama.ptrace_scope=2
+    Run this command: sudo mount -o remount,rw,nosuid,nodev,noexec,relatime,hidepid=2 /proc
+    Start nano-client
+
+When you close Apex again, follow these steps to undo it so you can properly launch Apex the next time:
+    Close Apex
+    Open terminal
+    Run this command: sudo sysctl -w kernel.yama.ptrace_scope=1
+    Run this command: sudo mount -o remount,rw,nosuid,nodev,noexec,relatime,hidepid=0 /proc
